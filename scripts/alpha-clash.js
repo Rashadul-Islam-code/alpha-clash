@@ -15,6 +15,7 @@ function handleKeyboardButtonPress(event){
     if(playerPressed === 'Escape'){
         gameOver();
     }
+    
 
     const currentAlphabetElement = document.getElementById('current-alphabet');
     const currentAlphabet = currentAlphabetElement.innerText;
@@ -111,6 +112,7 @@ function gameOver(){
     const lastScore = getTextElementValueById('current-score');
     setTextElementValueById('last-score', lastScore);
     
+    
 
     // Clear the last selected alphabet highlight
     const currentAlphabet = getElementTextById('current-alphabet');
@@ -134,3 +136,11 @@ function gameOver(){
 //     return alphabet;
 
 // }
+
+
+document.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        play();
+    }
+});
+
